@@ -1,0 +1,22 @@
+{
+  "OperationConfig": [
+    {
+      "name": "TestTable",
+      "table": "test_table",
+      "add": true,
+      "delete": true,
+      "update": true,
+      "get": true,
+      "detail": "测试单表增删改查"
+    },
+    {
+      "name": "JoinTable",
+      "table": "join_table",
+      "add": true,
+      "delete": true,
+      "update": true,
+      "get": true,
+      "detail": "测试连表查询"
+    }
+  ]
+}
