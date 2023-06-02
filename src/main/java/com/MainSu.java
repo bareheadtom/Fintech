@@ -1,6 +1,7 @@
 package com;
 
 import com.faas.database.ConfigLoader;
+import com.faas.model.OperationConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.faas.database.DbExcutor;
@@ -14,8 +15,8 @@ import com.faas.database.DbExcutor;
 public class MainSu {
     private static Logger logger = LoggerFactory.getLogger(MainSu.class);
     public static void main(String[] args) {
-        System.out.println("hello");
-        System.out.println(DbExcutor.query("select * from test_table"));
+        //System.out.println("hello");
+        //System.out.println(DbExcutor.query("select * from test_table"));
 //        System.out.println("my33数据库连接测试：{}"+ DbExcutor.query("select 1"));
 //        //logger.info("my2表配置加载数目：{}", ConfigLoader.OPERATION_CONFIG_MAP.size());
 //        //測試查詢
@@ -38,6 +39,10 @@ public class MainSu {
 //        System.out.println("add{}"+ DbExcutor.execute("insert into test_table (name, comment) values('suchangshengde', '帥哥susususu');"));
 //        System.out.println("end");
         System.out.println("表配置加载数目：{}"+ ConfigLoader.OPERATION_CONFIG_MAP.size());
+        for (String key : ConfigLoader.OPERATION_CONFIG_MAP.keySet()) {
+            OperationConfig op = ConfigLoader.OPERATION_CONFIG_MAP.get(key);
+            System.out.println(op);
+        }
     }
 
 }

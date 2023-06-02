@@ -1,5 +1,5 @@
 package com.faas.model;
-
+import java.lang.reflect.Field;
 public class OperationConfig {
     String name;
     String table;
@@ -63,5 +63,22 @@ public class OperationConfig {
 
     public void setDetail(final String detail) {
         this.detail = detail;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        try{
+            Field[] fields = this.getClass().getDeclaredFields();
+            sb.append("\r\n");
+            for(Field field : fields){
+                sb.append(field.getName().substring(field.getName().lastIndexOf(".")+1)+" : ")
+                        .append(this.getClass().getMethod("get"+field.getName().substring(0,1).toUpperCase()+field.getName().substring(1)).invoke(this))
+                        .append("\r\n");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return sb.toString();
     }
 }
