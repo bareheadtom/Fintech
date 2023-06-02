@@ -1,10 +1,10 @@
-package com;
+package com.faas.functions;
 
 import com.faas.database.ConfigLoader;
 import com.faas.model.OperationConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.faas.database.DbExcutor;
+
 /**
  * @ClassName MainSu
  * @Description TODO
